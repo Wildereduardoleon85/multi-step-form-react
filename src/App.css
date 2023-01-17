@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+:root {
+    /* palette */
+    --cake-blue: #eef5ff;
+    --secondary: #9fa0a5;
+    --primary: #082e5c;
+    --aquamarine: #bee3ff;
+    --light-grey: #dcdcdf;
+    --coral-red: #da5d71;
+    --grey: #c6c7cf;
+    --purple: #483eff;
+    --sideBarWidthDesk: 274px;
+    --sideBarHeightDesk: 568px;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: normal;
+}
+
+body {
+    background-color: var(--cake-blue);
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--primary);
+}
+
+.btn {
+    padding: 16px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--secondary);
+    background-color: transparent;
+    font-weight:700;
+}
+
+.btn:hover {
+    color: var(--primary);
+    transition: color ease-in-out 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color:white;
+    font-weight: 400;
+}
+
+.btn-primary:hover {
+    opacity: 0.85;
+    color: white;
+    transition: opacity ease-in-out 0.2s;
+}
+
+.next-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.go-back-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.stepTitle {
+    font-size: 2rem;
+    margin-top: 16px;  
+}
+
+.stepSubtitle {
+    color: var(--secondary);
+    margin-top: 10px;
+}

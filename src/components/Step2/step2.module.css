@@ -1,0 +1,26 @@
+.prizes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.switchContainer {
+    background-color: var(--cake-blue);
+    border-radius: 8px;
+    margin-top: 32px;
+    display: flex;
+    padding: 16px 0;
+    justify-content: center;
+}
+
+.switchContainer > p:first-child, .switchContainer > p:last-child {
+    font-weight: 700;
+    color: var(--secondary);
+    margin: 0 16px;
+}
+
+.switchContainer > p:first-child.active, 
+.switchContainer > p:last-child.active {
+    color: var(--primary);
+    transition: color ease-in-out 0.3s;
+}

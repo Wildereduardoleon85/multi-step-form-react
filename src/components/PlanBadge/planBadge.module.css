@@ -1,0 +1,46 @@
+.planBadge{
+    border: 1px solid var(--light-grey);
+    height: 184px;
+    width: 135px;
+    border-radius: 8px;
+    padding: 20px 16px 16px 16px;
+    position: relative;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+}
+
+.planBadge > img {
+    pointer-events: none;
+}
+
+.planBadge.active {
+    border-color: var(--purple);
+    background-color: var(--cake-blue);
+}
+
+.planBadge:hover {
+    border-color: var(--purple);
+    background-color: var(--cake-blue);
+}
+
+.planInfo {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    pointer-events: none;
+}
+
+.planInfo > p:first-child{
+    font-weight: 700;
+}
+
+.planInfo > p:nth-child(2){
+    color: var(--secondary);
+    font-size: 0.9rem;
+    margin-top: 6px;
+}
+
+.planInfo > p:nth-child(3) {
+   margin-top: 8px;
+   font-size: 0.9rem;
+}

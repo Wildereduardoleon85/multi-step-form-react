@@ -1,0 +1,39 @@
+.addOns {
+    margin-top: 40px;
+}
+
+.addOns > div {
+    display: flex;
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    margin-top: 12px;
+    padding: 16px 20px;
+    align-items: center;
+}
+
+.addOns > div:first-child {
+    margin-top: 0;
+}
+
+.addOns > div > div {
+    margin-left: 20px;
+}
+
+.addOns > div > p {
+    margin-left: auto;
+    color: var(--purple);
+    font-size: 0.9rem;
+}
+
+.addOns > div > div > p:first-child {
+    font-weight: 700;
+}
+
+.addOns > div > div > p:nth-child(2) {
+    color: var(--secondary);
+}
+
+.addOns > div > div > p:first-child,
+.addOns > div > div > p:nth-child(2) {
+    line-height: 24px;
+}

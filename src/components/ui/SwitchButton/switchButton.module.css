@@ -1,0 +1,28 @@
+.switchButton .labelSwitch {
+    display: flex;
+    width: 36px;
+    height: 20px;
+    background-color: var(--primary);
+    border-radius: 100px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.switchButton .labelSwitch::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform ease 0.2s;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.inputSwitch {
+    display: none;
+}
+
+.inputSwitch:checked~ .labelSwitch::after  {
+    transform: translateX(130%);
+}
