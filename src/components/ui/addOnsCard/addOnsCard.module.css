@@ -1,0 +1,48 @@
+.addOns {
+    display: flex;
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    margin-top: 12px;
+    padding: 16px 20px;
+    align-items: center;
+    transition: border-color ease-in-out 0.2s;
+        
+}
+
+.addOns:hover {
+    border-color: var(--purple);
+    cursor: pointer;
+}
+
+.addOns.active {
+    border-color: var(--purple);
+    background-color: var(--cake-blue);
+}
+
+
+.addOns:first-child {
+    margin-top: 0;
+}
+
+.addOns > div {
+    margin-left: 20px;
+}
+
+.addOns > p {
+    margin-left: auto;
+    color: var(--purple);
+    font-size: 0.9rem;
+}
+
+.addOns > div > p:first-child {
+    font-weight: 700;
+}
+
+.addOns > div > p:nth-child(2) {
+    color: var(--secondary);
+}
+
+.addOns > div > p:first-child,
+.addOns > div > p:nth-child(2) {
+    line-height: 24px;
+}

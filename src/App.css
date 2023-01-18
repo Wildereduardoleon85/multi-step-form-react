@@ -10,6 +10,7 @@
     --coral-red: #da5d71;
     --grey: #c6c7cf;
     --purple: #483eff;
+    /* other */
     --sideBarWidthDesk: 274px;
     --sideBarHeightDesk: 568px;
   }
@@ -40,7 +41,7 @@ body {
 
 .btn:hover {
     color: var(--primary);
-    transition: color ease-in-out 0.2s;
+    transition: color ease-in-out 0.15s;
 }
 
 .btn-primary {
@@ -52,7 +53,7 @@ body {
 .btn-primary:hover {
     opacity: 0.85;
     color: white;
-    transition: opacity ease-in-out 0.2s;
+    transition: opacity ease-in-out 0.15s;
 }
 
 .next-button {

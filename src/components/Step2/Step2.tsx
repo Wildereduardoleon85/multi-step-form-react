@@ -7,7 +7,7 @@ import {
 } from 'react'
 import styles from './step2.module.css'
 import { planBadges } from '../../constants'
-import PlanBadge from '../PlanBadge'
+import PlanCard from '../ui/PlanCard'
 import {
   PlanBadge as PlanBadgeType,
   SelectedPlan,
@@ -58,7 +58,7 @@ function Step2({ setStep }: Step2Props) {
       <div>
         <div className={prizes}>
           {planBadges.map((planBadge) => (
-            <PlanBadge {...setPlanBadgeProps(planBadge)} />
+            <PlanCard {...setPlanBadgeProps(planBadge)} />
           ))}
         </div>
         <div className={switchContainer}>

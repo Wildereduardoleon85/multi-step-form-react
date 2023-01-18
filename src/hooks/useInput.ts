@@ -3,7 +3,7 @@ import { UseInput, Validation } from '../types'
 
 type ValidateValue = (value: string) => Validation
 
-function useInput(validateValue: ValidateValue): UseInput {
+export function useInput(validateValue: ValidateValue): UseInput {
   const [value, setValue] = useState<string>('')
   const [isTouched, setIsTouched] = useState<boolean>(false)
 
@@ -32,5 +32,3 @@ function useInput(validateValue: ValidateValue): UseInput {
     reset,
   }
 }
-
-export default useInput

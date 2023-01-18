@@ -1,5 +1,5 @@
 import { FormEvent, Dispatch, SetStateAction } from 'react'
-import useInput from '../../hooks/useInput'
+import { useInput } from '../../hooks'
 import { Steps, UseInput } from '../../types'
 import { validateEmail, validateName, validatePhone } from '../../utils'
 import styles from './step1.module.css'

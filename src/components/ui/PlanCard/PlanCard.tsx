@@ -1,9 +1,9 @@
-import { forwardRef, MouseEvent, MutableRefObject } from 'react'
-import arcadeIcon from '../../assets/icon-arcade.svg'
-import advancedIcon from '../../assets/icon-advanced.svg'
-import proIcon from '../../assets/icon-pro.svg'
-import { SelectedPlan, Subscription } from '../../types'
-import styles from './planBadge.module.css'
+import { MouseEvent } from 'react'
+import arcadeIcon from '../../../assets/icon-arcade.svg'
+import advancedIcon from '../../../assets/icon-advanced.svg'
+import proIcon from '../../../assets/icon-pro.svg'
+import { SelectedPlan, Subscription } from '../../../types'
+import styles from './planCard.module.css'
 
 const { planBadge, planInfo, active } = styles
 
@@ -25,7 +25,7 @@ const planIcons: { [char: string]: string } = {
   Pro: proIcon,
 }
 
-const PlanBadge = ({
+const PlanCard = ({
   altText,
   planName,
   prize,
@@ -57,4 +57,4 @@ const PlanBadge = ({
   )
 }
 
-export default PlanBadge
+export default PlanCard
