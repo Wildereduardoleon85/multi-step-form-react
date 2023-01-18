@@ -19,6 +19,17 @@ export type UseInput = {
   reset: () => void
 }
 
+export type PlanBadge = {
+  planName: string
+  altText: string
+  prize: {
+    monthly: string
+    yearly: string
+  }
+}
+
 export type Subscription = 'monthly' | 'yearly'
 
 export type SelectedPlan = 'arcade' | 'advanced' | 'pro'
+
+export type Steps = 1 | 2 | 3 | 4

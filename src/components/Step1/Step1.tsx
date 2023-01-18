@@ -1,11 +1,11 @@
 import { FormEvent, Dispatch, SetStateAction } from 'react'
 import useInput from '../../hooks/useInput'
-import { UseInput } from '../../types'
+import { Steps, UseInput } from '../../types'
 import { validateEmail, validateName, validatePhone } from '../../utils'
 import styles from './step1.module.css'
 
 type Step1Props = {
-  setStep: Dispatch<SetStateAction<number>>
+  setStep: Dispatch<SetStateAction<Steps>>
 }
 
 const { step1Content, labelGroup, error } = styles

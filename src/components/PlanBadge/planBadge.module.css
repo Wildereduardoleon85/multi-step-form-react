@@ -6,7 +6,7 @@
     padding: 20px 16px 16px 16px;
     position: relative;
     cursor: pointer;
-    transition: all ease-in-out 0.2s;
+    transition: border-color ease-in-out 0.2s;
 }
 
 .planBadge > img {
@@ -20,7 +20,6 @@
 
 .planBadge:hover {
     border-color: var(--purple);
-    background-color: var(--cake-blue);
 }
 
 .planInfo {

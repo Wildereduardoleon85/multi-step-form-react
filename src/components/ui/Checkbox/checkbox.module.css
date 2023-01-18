@@ -1,0 +1,37 @@
+.checkboxLabel {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.disablePointer {
+    pointer-events: none;
+}
+
+.checkboxInput {
+    display: none;
+}
+
+.checkboxBox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: 
+        background-color ease-in-out 0.15s, 
+        border-color ease-in-out 0.15s;
+}
+
+.checkboxBox::after{
+    content: url("../../../assets/icon-checkmark.svg");
+    margin-top: -2px;
+}
+
+.checkboxInput:checked + .checkboxBox {
+    background-color: var(--purple);
+    border-color: var(--purple);
+}

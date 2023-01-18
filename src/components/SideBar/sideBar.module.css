@@ -47,7 +47,6 @@
     color: var(--primary);
     font-weight: 500;
     border-color: transparent;
-    color: var(--primary);
 }
 
 .stepCircle  > p.activeLabel {

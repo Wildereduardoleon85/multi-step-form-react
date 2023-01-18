@@ -8,11 +8,16 @@ import {
 import styles from './step2.module.css'
 import { planBadges } from '../../constants'
 import PlanBadge from '../PlanBadge'
-import { SelectedPlan, Subscription } from '../../types'
+import {
+  PlanBadge as PlanBadgeType,
+  SelectedPlan,
+  Steps,
+  Subscription,
+} from '../../types'
 import SwitchButton from '../ui/SwitchButton'
 
 type Step2Props = {
-  setStep: Dispatch<SetStateAction<number>>
+  setStep: Dispatch<SetStateAction<Steps>>
 }
 
 const { switchContainer, prizes, active } = styles
@@ -34,6 +39,16 @@ function Step2({ setStep }: Step2Props) {
     setSelectedPlan(target.id as SelectedPlan)
   }
 
+  function setPlanBadgeProps(planBadge: PlanBadgeType) {
+    return {
+      ...planBadge,
+      subscription,
+      selectedPlan,
+      onSelectedPlan,
+      key: planBadge.planName,
+    }
+  }
+
   return (
     <>
       <h2 className='stepTitle'>Select your plan</h2>
@@ -42,16 +57,9 @@ function Step2({ setStep }: Step2Props) {
       </p>
       <div>
         <div className={prizes}>
-          {planBadges.map((planBadge) => {
-            const props = {
-              ...planBadge,
-              subscription,
-              selectedPlan,
-              onSelectedPlan,
-              key: planBadge.planName,
-            }
-            return <PlanBadge {...props} />
-          })}
+          {planBadges.map((planBadge) => (
+            <PlanBadge {...setPlanBadgeProps(planBadge)} />
+          ))}
         </div>
         <div className={switchContainer}>
           <p className={subscription === 'monthly' ? active : ''}>Monthly</p>

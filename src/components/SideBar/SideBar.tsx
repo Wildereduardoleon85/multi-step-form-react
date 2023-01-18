@@ -1,8 +1,9 @@
 import styles from './sideBar.module.css'
 import { sideBarStepsInfo } from '../../constants'
+import { Steps } from '../../types'
 
 type SideBarProps = {
-  step: number
+  step: Steps
 }
 
 const {

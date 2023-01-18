@@ -1,4 +1,6 @@
-export const planBadges = [
+import { PlanBadge } from '../types'
+
+export const planBadges: PlanBadge[] = [
   {
     planName: 'Arcade',
     altText: 'arcade-icon',

@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 import StepsContainer from './components/StepsContainer'
+import { Steps } from './types'
 
 function App() {
-  const [step, setStep] = useState<number>(1)
+  const [step, setStep] = useState<Steps>(3)
 
   return <StepsContainer step={step} setStep={setStep} />
 }

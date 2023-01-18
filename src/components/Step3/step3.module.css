@@ -9,7 +9,20 @@
     margin-top: 12px;
     padding: 16px 20px;
     align-items: center;
+    transition: border-color ease-in-out 0.2s;
+        
 }
+
+.addOns > div:hover {
+    border-color: var(--purple);
+    cursor: pointer;
+}
+
+.addOns > div.active {
+    border-color: var(--purple);
+    background-color: var(--cake-blue);
+}
+
 
 .addOns > div:first-child {
     margin-top: 0;
