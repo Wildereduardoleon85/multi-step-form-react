@@ -4,7 +4,7 @@ import StepsContainer from './components/StepsContainer'
 import { Steps } from './types'
 
 function App() {
-  const [step, setStep] = useState<Steps>(3)
+  const [step, setStep] = useState<Steps>(1)
 
   return <StepsContainer step={step} setStep={setStep} />
 }

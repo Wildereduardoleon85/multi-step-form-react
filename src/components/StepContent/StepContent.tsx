@@ -13,14 +13,14 @@ type StepContentProps = {
 const { stepContentContainer } = styles
 
 function StepContent({ step, setStep }: StepContentProps) {
-  const stepsMapper: { [char: number]: JSX.Element } = {
+  const stepsByIndex: { [char: number]: JSX.Element } = {
     1: <Step1 setStep={setStep} />,
     2: <Step2 setStep={setStep} />,
     3: <Step3 setStep={setStep} />,
-    4: <h1>Step 4</h1>,
+    4: <h1>step 4</h1>,
   }
 
-  return <div className={stepContentContainer}>{stepsMapper[step]}</div>
+  return <div className={stepContentContainer}>{stepsByIndex[step]}</div>
 }
 
 export default StepContent

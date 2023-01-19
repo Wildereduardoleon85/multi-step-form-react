@@ -1,6 +1,6 @@
 import { useState, useRef, RefObject, Dispatch, SetStateAction } from 'react'
 import { addOns } from '../constants'
-import { AddOnsCardAttrs, AddOnsCardInfo } from '../types'
+import { AddOns, AddOnsCardAttrs, AddOnsCardInfo } from '../types'
 
 function onAddOnCardClick(
   ref: RefObject<HTMLInputElement>,
@@ -46,14 +46,12 @@ export function useAddOns() {
     },
   }
 
-  const addOnsCardsInfo: AddOnsCardInfo[] = addOns.map((addOn) => {
-    return {
-      ...addOn,
-      ref: addOnsAttrs[addOn.name].ref,
-      isActive: addOnsAttrs[addOn.name].isActive,
-      onCardClick: addOnsAttrs[addOn.name].onCardClick,
-    }
-  })
+  const addOnsCardsInfo: AddOnsCardInfo[] = addOns.map((addOn: AddOns) => ({
+    ...addOn,
+    ref: addOnsAttrs[addOn.name].ref,
+    isActive: addOnsAttrs[addOn.name].isActive,
+    onCardClick: addOnsAttrs[addOn.name].onCardClick,
+  }))
 
   return {
     addOnsState: {

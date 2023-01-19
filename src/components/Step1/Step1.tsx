@@ -11,9 +11,23 @@ type Step1Props = {
 const { step1Content, labelGroup, error } = styles
 
 function Step1({ setStep }: Step1Props) {
-  const nameInput = useInput(validateName)
-  const emailInput = useInput(validateEmail)
-  const phoneInput = useInput(validatePhone)
+  const localStorageInfo = localStorage.getItem('multi-step')
+
+  function getPersonalInfoFromLS() {
+    if (localStorageInfo) {
+      return JSON.parse(localStorageInfo).personalInfo || null
+    }
+  }
+
+  const initialValues = getPersonalInfoFromLS() || {
+    name: '',
+    email: '',
+    phone: '',
+  }
+
+  const nameInput = useInput(initialValues.name, validateName)
+  const emailInput = useInput(initialValues.email, validateEmail)
+  const phoneInput = useInput(initialValues.phone, validatePhone)
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -32,6 +46,24 @@ function Step1({ setStep }: Step1Props) {
       })
       return
     }
+
+    const personalInfo = {
+      name: nameInput.value,
+      email: emailInput.value,
+      phone: phoneInput.value,
+    }
+
+    function getUpdatedLS() {
+      if (localStorageInfo) {
+        const storedInfo = JSON.parse(localStorageInfo)
+        storedInfo.personalInfo = personalInfo
+        return storedInfo
+      } else {
+        return { personalInfo }
+      }
+    }
+
+    localStorage.setItem('multi-step', JSON.stringify(getUpdatedLS()))
 
     setStep(2)
   }
@@ -52,10 +84,11 @@ function Step1({ setStep }: Step1Props) {
             autoComplete='off'
             name='name'
             type='text'
-            placeholder='e.g John Doe'
+            placeholder='e.g John'
             className={nameInput.error ? error : ''}
             onChange={nameInput.onChange}
             onBlur={nameInput.onBlur}
+            value={nameInput.value}
           />
         </div>
         <div>
@@ -71,6 +104,7 @@ function Step1({ setStep }: Step1Props) {
             className={emailInput.error ? error : ''}
             onChange={emailInput.onChange}
             onBlur={emailInput.onBlur}
+            value={emailInput.value}
           />
         </div>
         <div>
@@ -86,6 +120,7 @@ function Step1({ setStep }: Step1Props) {
             className={phoneInput.error ? error : ''}
             onChange={phoneInput.onChange}
             onBlur={phoneInput.onBlur}
+            value={phoneInput.value}
           />
         </div>
         <button className='btn btn-primary next-button' type='submit'>

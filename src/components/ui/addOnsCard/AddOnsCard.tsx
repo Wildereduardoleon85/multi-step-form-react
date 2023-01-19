@@ -12,7 +12,7 @@ const AddOnsCard = forwardRef(
   ) => {
     return (
       <div
-        className={isActive ? `${addOns} ${active}` : `${addOns}`}
+        className={isActive ? `${addOns} ${active}` : addOns}
         onClick={onCardClick}
       >
         <Checkbox

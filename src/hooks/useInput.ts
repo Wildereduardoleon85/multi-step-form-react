@@ -3,8 +3,11 @@ import { UseInput, Validation } from '../types'
 
 type ValidateValue = (value: string) => Validation
 
-export function useInput(validateValue: ValidateValue): UseInput {
-  const [value, setValue] = useState<string>('')
+export function useInput(
+  initialValue: string,
+  validateValue: ValidateValue
+): UseInput {
+  const [value, setValue] = useState<string>(initialValue)
   const [isTouched, setIsTouched] = useState<boolean>(false)
 
   const { isValid, error: validationError } = validateValue(value)
