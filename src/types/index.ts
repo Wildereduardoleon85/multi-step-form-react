@@ -56,3 +56,27 @@ export interface AddOnsCardProps extends AddOns {
 export interface AddOnsCardInfo extends AddOnsCardProps {
   ref: Ref<HTMLInputElement>
 }
+
+export type PersonalInfo = {
+  name: string
+  email: string
+  phone: string
+}
+
+export type LocalStorageMultiStepKeys = 'personalInfo' | 'planType' | 'addOns'
+
+export type PlanType = {
+  selectedPlan: SelectedPlan
+  subscription: Subscription
+}
+
+export type StepState = {
+  step: Steps
+  personalInfo: PersonalInfo
+  planType: PlanType
+  addOns: {
+    isOnLineService: boolean
+    isLargerStorage: boolean
+    isCustomizableProfile: boolean
+  }
+}

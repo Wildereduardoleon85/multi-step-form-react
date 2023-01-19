@@ -1,44 +1,31 @@
-import { FormEvent, Dispatch, SetStateAction } from 'react'
+import { FormEvent, useContext } from 'react'
+import { StepContext } from '../../context/StepContext'
+import { updatePersonalInfoInLS } from '../../helpers'
 import { useInput } from '../../hooks'
-import { Steps, UseInput } from '../../types'
+import { UseInput } from '../../types'
 import { validateEmail, validateName, validatePhone } from '../../utils'
 import styles from './step1.module.css'
 
-type Step1Props = {
-  setStep: Dispatch<SetStateAction<Steps>>
-}
-
 const { step1Content, labelGroup, error } = styles
 
-function Step1({ setStep }: Step1Props) {
-  const localStorageInfo = localStorage.getItem('multi-step')
+function Step1() {
+  const { state, updateStep, setPersonalInfo } = useContext(StepContext)
+  const { personalInfo } = state
 
-  function getPersonalInfoFromLS() {
-    if (localStorageInfo) {
-      return JSON.parse(localStorageInfo).personalInfo || null
-    }
+  const nameInput = useInput(personalInfo.name, validateName)
+  const emailInput = useInput(personalInfo.email, validateEmail)
+  const phoneInput = useInput(personalInfo.phone, validatePhone)
+
+  const formValues: UseInput[] = [nameInput, emailInput, phoneInput]
+
+  function checkValidation(formValues: UseInput) {
+    if (formValues.isValid) return true
   }
 
-  const initialValues = getPersonalInfoFromLS() || {
-    name: '',
-    email: '',
-    phone: '',
-  }
-
-  const nameInput = useInput(initialValues.name, validateName)
-  const emailInput = useInput(initialValues.email, validateEmail)
-  const phoneInput = useInput(initialValues.phone, validatePhone)
+  const isFormValid = formValues.every(checkValidation)
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-
-    const formValues: UseInput[] = [nameInput, emailInput, phoneInput]
-
-    function checkValidation(formValues: UseInput) {
-      if (formValues.isValid) return true
-    }
-
-    const isFormValid = formValues.every(checkValidation)
 
     if (!isFormValid) {
       formValues.forEach((formValue: UseInput) => {
@@ -47,25 +34,15 @@ function Step1({ setStep }: Step1Props) {
       return
     }
 
-    const personalInfo = {
+    const formUpdatedValues = {
       name: nameInput.value,
       email: emailInput.value,
       phone: phoneInput.value,
     }
 
-    function getUpdatedLS() {
-      if (localStorageInfo) {
-        const storedInfo = JSON.parse(localStorageInfo)
-        storedInfo.personalInfo = personalInfo
-        return storedInfo
-      } else {
-        return { personalInfo }
-      }
-    }
-
-    localStorage.setItem('multi-step', JSON.stringify(getUpdatedLS()))
-
-    setStep(2)
+    updatePersonalInfoInLS(formUpdatedValues)
+    setPersonalInfo(formUpdatedValues)
+    updateStep(2)
   }
 
   return (

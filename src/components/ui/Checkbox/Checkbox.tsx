@@ -1,5 +1,5 @@
 import { forwardRef, LegacyRef, useEffect, useState } from 'react'
-import { generateUUID } from '../../../utils/generateUUID'
+import { generateUUID } from '../../../utils'
 import styles from './checkbox.module.css'
 
 type CheckboxProps = {

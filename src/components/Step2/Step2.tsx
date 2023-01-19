@@ -1,30 +1,23 @@
-import {
-  useState,
-  ChangeEvent,
-  Dispatch,
-  SetStateAction,
-  MouseEvent,
-} from 'react'
+import { ChangeEvent, MouseEvent, useContext } from 'react'
 import styles from './step2.module.css'
 import { planBadges } from '../../constants'
 import PlanCard from '../ui/PlanCard'
-import {
-  PlanBadge as PlanBadgeType,
-  SelectedPlan,
-  Steps,
-  Subscription,
-} from '../../types'
+import { PlanBadge as PlanBadgeType, SelectedPlan } from '../../types'
 import SwitchButton from '../ui/SwitchButton'
-
-type Step2Props = {
-  setStep: Dispatch<SetStateAction<Steps>>
-}
+import { updatePlanInLS } from '../../helpers'
+import { StepContext } from '../../context/StepContext'
 
 const { switchContainer, prizes, active } = styles
 
-function Step2({ setStep }: Step2Props) {
-  const [subscription, setSubscription] = useState<Subscription>('monthly')
-  const [selectedPlan, setSelectedPlan] = useState<SelectedPlan>('arcade')
+function Step2() {
+  const {
+    state: {
+      planType: { selectedPlan, subscription },
+    },
+    setSubscription,
+    setSelectedPlan,
+    updateStep,
+  } = useContext(StepContext)
 
   function onSwitchChange(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.checked) {
@@ -49,6 +42,16 @@ function Step2({ setStep }: Step2Props) {
     }
   }
 
+  const updatedPlan = {
+    selectedPlan,
+    subscription,
+  }
+
+  function onNextStepClick() {
+    updatePlanInLS(updatedPlan)
+    updateStep(3)
+  }
+
   return (
     <>
       <h2 className='stepTitle'>Select your plan</h2>
@@ -70,14 +73,14 @@ function Step2({ setStep }: Step2Props) {
       <button
         type='button'
         className='btn go-back-button'
-        onClick={() => setStep(1)}
+        onClick={() => updateStep(1)}
       >
         Go Back
       </button>
       <button
         className='btn btn-primary next-button'
         type='button'
-        onClick={() => setStep(3)}
+        onClick={onNextStepClick}
       >
         Next Step
       </button>
