@@ -9,7 +9,7 @@ const { addOns } = styles
 
 function Step3() {
   const { updateStep } = useContext(StepContext)
-  const { addOnsCardsInfo } = useAddOns()
+  const addOnsCardsInfo = useAddOns()
 
   return (
     <>

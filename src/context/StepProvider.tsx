@@ -1,5 +1,4 @@
 import { useMemo, useReducer } from 'react'
-import { getPersonalInfoFromLS, getPlanTypefoFromLS } from '../helpers'
 import {
   PersonalInfo,
   SelectedPlan,
@@ -16,12 +15,12 @@ type StepProviderProps = {
 
 const initialState: StepState = {
   step: 1,
-  personalInfo: getPersonalInfoFromLS() || {
+  personalInfo: {
     name: '',
     email: '',
     phone: '',
   },
-  planType: getPlanTypefoFromLS() || {
+  planType: {
     selectedPlan: 'arcade',
     subscription: 'monthly',
   },

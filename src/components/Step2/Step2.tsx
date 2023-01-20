@@ -4,7 +4,6 @@ import { planBadges } from '../../constants'
 import PlanCard from '../ui/PlanCard'
 import { PlanBadge as PlanBadgeType, SelectedPlan } from '../../types'
 import SwitchButton from '../ui/SwitchButton'
-import { updatePlanInLS } from '../../helpers'
 import { StepContext } from '../../context/StepContext'
 
 const { switchContainer, prizes, active } = styles
@@ -48,7 +47,6 @@ function Step2() {
   }
 
   function onNextStepClick() {
-    updatePlanInLS(updatedPlan)
     updateStep(3)
   }
 

@@ -82,3 +82,26 @@ export type StepState = {
     isCustomizableProfile: boolean
   }
 }
+
+export type FormInputDefaultAttrs = {
+  name: string
+  type: string
+  placeholder: string
+  label: string
+}
+
+export interface FormInputDynamicAttrs extends FormInputDefaultAttrs {
+  error: string
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
+  onBlur: () => void
+  value: string
+}
+
+export type FormAttrsByName = {
+  [char: string]: {
+    error: string
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void
+    onBlur: () => void
+    value: string
+  }
+}

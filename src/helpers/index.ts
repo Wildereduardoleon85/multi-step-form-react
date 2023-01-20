@@ -1,1 +1,1 @@
-export * from './updateLocalStorage'
+export * from './getFomAttrs'

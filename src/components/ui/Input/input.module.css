@@ -1,0 +1,48 @@
+ .labelGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ .labelGroup label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+
+ .labelGroup span {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-left: auto;
+    color: var(--coral-red);
+}
+
+ input {
+    width: 100%;
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    padding: 12px;
+    outline: none;
+    font-size: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+ input:focus {
+    border-color: var(--primary);
+}
+
+ input.errorClassName {
+    border-color: #da5d71;
+}
+
+
+::placeholder{
+    color: var(--grey);
+}

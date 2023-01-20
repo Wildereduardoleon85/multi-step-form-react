@@ -8,7 +8,7 @@ export function validateName(value: string): Validation {
     }
   }
 
-  if (!/^[a-zA-Z]+$/.test(value)) {
+  if (!/^[a-zA-Z ]+$/.test(value)) {
     return {
       isValid: false,
       error: 'This field must contain only letters',

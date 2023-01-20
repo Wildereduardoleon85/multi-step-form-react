@@ -56,12 +56,5 @@ export function useAddOns() {
     onCardClick: addOnsAttrs[addOn.name].onCardClick,
   }))
 
-  return {
-    addOnsState: {
-      isOnLineService,
-      isLargerStorage,
-      isCustomizableProfile,
-    },
-    addOnsCardsInfo,
-  }
+  return addOnsCardsInfo
 }
