@@ -42,7 +42,7 @@
     color: white;
 }
 
-.activeCircle {
+.active {
     background-color: var(--aquamarine);
     color: var(--primary);
     font-weight: 500;

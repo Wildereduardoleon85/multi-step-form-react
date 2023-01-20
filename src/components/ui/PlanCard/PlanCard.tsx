@@ -7,7 +7,7 @@ import styles from './planCard.module.css'
 
 const { planBadge, planInfo, active } = styles
 
-type PlanBadgeProps = {
+type PlanCardProps = {
   planName: string
   prize: {
     monthly: string
@@ -32,7 +32,7 @@ const PlanCard = ({
   subscription,
   selectedPlan,
   onSelectedPlan,
-}: PlanBadgeProps) => {
+}: PlanCardProps) => {
   function setPlanBadgeClassName(planName: SelectedPlan): string {
     if (planName.toLowerCase() === selectedPlan) {
       return `${planBadge} ${active}`
