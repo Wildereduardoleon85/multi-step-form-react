@@ -13,7 +13,7 @@ function StepContent() {
   const stepsByIndex: { [char: number]: JSX.Element } = {
     1: <Step1 />,
     2: <Step2 />,
-    3: <h1> Step 3</h1>,
+    3: <Step3 />,
     4: <h1>step 4</h1>,
   }
 

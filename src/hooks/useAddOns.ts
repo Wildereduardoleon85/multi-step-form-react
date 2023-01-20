@@ -1,21 +1,26 @@
-import { useState, useRef, RefObject, Dispatch, SetStateAction } from 'react'
+import { useRef, RefObject, useContext } from 'react'
 import { addOns } from '../constants'
+import { StepContext } from '../context/StepContext'
 import { AddOns, AddOnsCardAttrs, AddOnsCardInfo } from '../types'
 
 function onAddOnCardClick(
   ref: RefObject<HTMLInputElement>,
-  state: boolean,
-  setState: Dispatch<SetStateAction<boolean>>
+  setState: () => void
 ) {
   const refCurrentState = ref.current as HTMLInputElement
   refCurrentState.checked = !refCurrentState.checked
-  setState(!state)
+  setState()
 }
 
 export function useAddOns() {
-  const [isOnLineService, setIsOnLineService] = useState(true)
-  const [isLargerStorage, setIsLargerStorage] = useState(false)
-  const [isCustomizableProfile, setIsCustomizableProfile] = useState(false)
+  const {
+    state,
+    setIsCustomizableProfile,
+    setIsLargerStorage,
+    setIsOnlineService,
+  } = useContext(StepContext)
+  const { isOnLineService, isLargerStorage, isCustomizableProfile } =
+    state.addOns
 
   const onLineServiceRef = useRef<HTMLInputElement>(null)
   const largerStorageRef = useRef<HTMLInputElement>(null)
@@ -25,24 +30,18 @@ export function useAddOns() {
     'Online service': {
       ref: onLineServiceRef,
       isActive: isOnLineService,
-      onCardClick: () =>
-        onAddOnCardClick(onLineServiceRef, isOnLineService, setIsOnLineService),
+      onCardClick: () => onAddOnCardClick(onLineServiceRef, setIsOnlineService),
     },
     'Larger storage': {
       ref: largerStorageRef,
       isActive: isLargerStorage,
-      onCardClick: () =>
-        onAddOnCardClick(largerStorageRef, isLargerStorage, setIsLargerStorage),
+      onCardClick: () => onAddOnCardClick(largerStorageRef, setIsLargerStorage),
     },
     'Customizable profile': {
       ref: customizableProfileRef,
       isActive: isCustomizableProfile,
       onCardClick: () =>
-        onAddOnCardClick(
-          customizableProfileRef,
-          isCustomizableProfile,
-          setIsCustomizableProfile
-        ),
+        onAddOnCardClick(customizableProfileRef, setIsCustomizableProfile),
     },
   }
 

@@ -11,21 +11,22 @@ type StepAction =
   | { type: 'setPersonalInfo'; payload: PersonalInfo }
   | { type: 'setSubscription'; payload: Subscription }
   | { type: 'setSelectedPlan'; payload: SelectedPlan }
+  | { type: 'setIsOnlineService' }
+  | { type: 'setIsLargerStorage' }
+  | { type: 'setIsCustomizableProfile' }
 
 export function stepReducer(state: StepState, action: StepAction): StepState {
-  const { type, payload } = action
-
-  switch (type) {
+  switch (action.type) {
     case 'updateStep':
       return {
         ...state,
-        step: payload,
+        step: action.payload,
       }
 
     case 'setPersonalInfo':
       return {
         ...state,
-        personalInfo: payload,
+        personalInfo: action.payload,
       }
 
     case 'setSubscription':
@@ -33,7 +34,7 @@ export function stepReducer(state: StepState, action: StepAction): StepState {
         ...state,
         planType: {
           ...state.planType,
-          subscription: payload,
+          subscription: action.payload,
         },
       }
 
@@ -42,7 +43,34 @@ export function stepReducer(state: StepState, action: StepAction): StepState {
         ...state,
         planType: {
           ...state.planType,
-          selectedPlan: payload,
+          selectedPlan: action.payload,
+        },
+      }
+
+    case 'setIsOnlineService':
+      return {
+        ...state,
+        addOns: {
+          ...state.addOns,
+          isOnLineService: !state.addOns.isOnLineService,
+        },
+      }
+
+    case 'setIsLargerStorage':
+      return {
+        ...state,
+        addOns: {
+          ...state.addOns,
+          isLargerStorage: !state.addOns.isLargerStorage,
+        },
+      }
+
+    case 'setIsCustomizableProfile':
+      return {
+        ...state,
+        addOns: {
+          ...state.addOns,
+          isCustomizableProfile: !state.addOns.isCustomizableProfile,
         },
       }
 

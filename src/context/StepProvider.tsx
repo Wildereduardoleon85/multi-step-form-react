@@ -63,6 +63,24 @@ export function StepProvider({ children }: StepProviderProps) {
     })
   }
 
+  function setIsOnlineService() {
+    dispatch({
+      type: 'setIsOnlineService',
+    })
+  }
+
+  function setIsLargerStorage() {
+    dispatch({
+      type: 'setIsLargerStorage',
+    })
+  }
+
+  function setIsCustomizableProfile() {
+    dispatch({
+      type: 'setIsCustomizableProfile',
+    })
+  }
+
   const memoizedState = useMemo(
     () => ({
       state,
@@ -70,6 +88,9 @@ export function StepProvider({ children }: StepProviderProps) {
       setPersonalInfo,
       setSubscription,
       setSelectedPlan,
+      setIsOnlineService,
+      setIsLargerStorage,
+      setIsCustomizableProfile,
     }),
     [state, dispatch]
   )

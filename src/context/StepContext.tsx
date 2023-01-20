@@ -13,6 +13,9 @@ type StepContextProps = {
   setPersonalInfo: (personalInfo: PersonalInfo) => void
   setSubscription: (subscription: Subscription) => void
   setSelectedPlan: (selectedPlan: SelectedPlan) => void
+  setIsOnlineService: () => void
+  setIsLargerStorage: () => void
+  setIsCustomizableProfile: () => void
 }
 
 export const StepContext = createContext<StepContextProps>(

@@ -1,4 +1,5 @@
-import { ChangeEvent } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
+import { generateUUID } from '../../../utils'
 import styles from './switchButton.module.css'
 
 type SwitchButtonProps = {
@@ -8,15 +9,21 @@ type SwitchButtonProps = {
 const { switchButton, inputSwitch, labelSwitch } = styles
 
 function SwitchButton({ onChange }: SwitchButtonProps) {
+  const [id, setId] = useState('')
+
+  useEffect(() => {
+    setId(generateUUID())
+  }, [])
+
   return (
     <div className={switchButton}>
       <input
         type='checkbox'
-        id='btn-switch'
+        id={id}
         className={inputSwitch}
         onChange={onChange}
       />
-      <label htmlFor='btn-switch' className={labelSwitch}></label>
+      <label htmlFor={id} className={labelSwitch}></label>
     </div>
   )
 }

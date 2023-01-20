@@ -1,16 +1,14 @@
-import { Dispatch, SetStateAction } from 'react'
-import { AddOnsCardInfo, Steps } from '../../types'
+import { useContext } from 'react'
+import { AddOnsCardInfo } from '../../types'
 import styles from './step3.module.css'
 import AddOnsCard from '../ui/addOnsCard'
 import { useAddOns } from '../../hooks'
-
-type Step3Props = {
-  setStep: Dispatch<SetStateAction<Steps>>
-}
+import { StepContext } from '../../context/StepContext'
 
 const { addOns } = styles
 
-function Step3({ setStep }: Step3Props) {
+function Step3() {
+  const { updateStep } = useContext(StepContext)
   const { addOnsCardsInfo } = useAddOns()
 
   return (
@@ -19,28 +17,20 @@ function Step3({ setStep }: Step3Props) {
       <p className='stepSubtitle'>Add-ons enhance your gaming experience</p>
       <div className={addOns}>
         {addOnsCardsInfo.map((addOnsCardInfo: AddOnsCardInfo) => (
-          <AddOnsCard
-            key={addOnsCardInfo.name}
-            name={addOnsCardInfo.name}
-            description={addOnsCardInfo.description}
-            isActive={addOnsCardInfo.isActive}
-            onCardClick={addOnsCardInfo.onCardClick}
-            monthlyCost={addOnsCardInfo.monthlyCost}
-            ref={addOnsCardInfo.ref}
-          />
+          <AddOnsCard key={addOnsCardInfo.name} {...addOnsCardInfo} />
         ))}
       </div>
       <button
         type='button'
         className='btn go-back-button'
-        onClick={() => setStep(2)}
+        onClick={() => updateStep(2)}
       >
         Go Back
       </button>
       <button
         className='btn btn-primary next-button'
         type='button'
-        onClick={() => setStep(4)}
+        onClick={() => updateStep(4)}
       >
         Next Step
       </button>
