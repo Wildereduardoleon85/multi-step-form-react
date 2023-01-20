@@ -30,16 +30,19 @@ export function useAddOns() {
     'Online service': {
       ref: onLineServiceRef,
       isActive: isOnLineService,
+      defaultChecked: isOnLineService,
       onCardClick: () => onAddOnCardClick(onLineServiceRef, setIsOnlineService),
     },
     'Larger storage': {
       ref: largerStorageRef,
       isActive: isLargerStorage,
+      defaultChecked: isLargerStorage,
       onCardClick: () => onAddOnCardClick(largerStorageRef, setIsLargerStorage),
     },
     'Customizable profile': {
       ref: customizableProfileRef,
       isActive: isCustomizableProfile,
+      defaultChecked: isCustomizableProfile,
       onCardClick: () =>
         onAddOnCardClick(customizableProfileRef, setIsCustomizableProfile),
     },
@@ -47,6 +50,7 @@ export function useAddOns() {
 
   const addOnsCardsInfo: AddOnsCardInfo[] = addOns.map((addOn: AddOns) => ({
     ...addOn,
+    defaultChecked: addOnsAttrs[addOn.name].defaultChecked,
     ref: addOnsAttrs[addOn.name].ref,
     isActive: addOnsAttrs[addOn.name].isActive,
     onCardClick: addOnsAttrs[addOn.name].onCardClick,

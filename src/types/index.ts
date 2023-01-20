@@ -45,12 +45,14 @@ export type AddOnsCardAttrs = {
     ref: RefObject<HTMLInputElement>
     isActive: boolean
     onCardClick: () => void
+    defaultChecked: boolean
   }
 }
 
 export interface AddOnsCardProps extends AddOns {
   isActive: boolean
   onCardClick: () => void
+  defaultChecked: boolean
 }
 
 export interface AddOnsCardInfo extends AddOnsCardProps {

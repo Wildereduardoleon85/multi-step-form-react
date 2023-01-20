@@ -7,7 +7,14 @@ const { addOns, active } = styles
 
 const AddOnsCard = forwardRef(
   (
-    { name, isActive, onCardClick, description, monthlyCost }: AddOnsCardProps,
+    {
+      name,
+      isActive,
+      onCardClick,
+      description,
+      monthlyCost,
+      defaultChecked,
+    }: AddOnsCardProps,
     ref: Ref<HTMLInputElement>
   ) => {
     return (
@@ -18,7 +25,7 @@ const AddOnsCard = forwardRef(
         <Checkbox
           ref={ref}
           disablePointerEvents={true}
-          defaultChecked={name === 'Online service' ? true : false}
+          defaultChecked={defaultChecked}
         />
         <div>
           <p>{name}</p>
