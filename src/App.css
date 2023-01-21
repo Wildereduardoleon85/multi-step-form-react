@@ -116,3 +116,9 @@ body {
 .step-circle  > p.active-label {
     color: var(--primary);
 }
+
+@media (max-width: 900px) {
+    .next-button.desktop {
+        display: none;
+  }
+}

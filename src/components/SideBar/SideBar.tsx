@@ -6,10 +6,7 @@ import { StepContext } from '../../context/StepContext'
 const {
   sideBar,
   stepInfoContainer,
-  stepCircle,
   stepDescription,
-  activeCircle,
-  activeLabel,
 } = styles
 
 function SideBar() {

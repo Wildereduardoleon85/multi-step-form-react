@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="221" height="172" viewBox="0 0 221 172">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_1" data-name="Rectángulo 1" width="221" height="172" transform="translate(785.461 455)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="left-mountain-icon" transform="translate(-785.461 -455)" clip-path="url(#clip-path)">
+    <g id="Grupo_1" data-name="Grupo 1">
+      <path id="Trazado_2" data-name="Trazado 2" d="M79.546,349.634C134.093,478.28,372.07,553.766,434.172,449.486s-95.035-123.2-150.583-230.963S184.878,43.508,104.616,68.057,25,220.987,79.546,349.634Z" transform="translate(635.004 322.997)" fill="#6259ff" fill-rule="evenodd"/>
+      <ellipse id="Elipse_1" data-name="Elipse 1" cx="96.329" cy="96.373" rx="96.329" ry="96.373" transform="translate(671.539 489.335)" fill="#ffaf7e"/>
+    </g>
+  </g>
+</svg>

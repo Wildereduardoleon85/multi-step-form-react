@@ -1,0 +1,15 @@
+.footer {
+  background-color: white;
+  position: absolute;
+  height: 90px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer button {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  right: 20px;
+}

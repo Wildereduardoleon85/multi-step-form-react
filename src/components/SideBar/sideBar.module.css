@@ -1,6 +1,7 @@
 .sideBar {
     width: var(--sideBarWidthDesk);
     height: var(--sideBarHeightDesk);
+    max-height: 550px;
     background-image: url("../../assets/bg-sidebar-desktop.svg");
 }
 

@@ -20,5 +20,11 @@ main {
 @media (max-width: 900px) {
     .stepsContainer {
         padding: 32px;
+        margin-top: 100px;
+        height: auto;
+
+    }
+    main {
+        align-items: flex-start;
     }
   }

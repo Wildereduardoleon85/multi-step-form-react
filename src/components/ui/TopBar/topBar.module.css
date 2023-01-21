@@ -1,0 +1,43 @@
+.topBar {
+    height: 172px; 
+    background-color: var(--purple);
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.topBar > img:nth-child(2){
+    display:block;
+    margin-left: auto;
+}
+
+.circleContainer {
+    position: absolute;
+    width: 100%;
+    top: 36px;
+}
+
+.circleContainer > div {
+    display: flex;
+    max-width: fit-content;
+    margin: auto;
+}
+
+.circleContainer > div > div {
+    margin: 0 8px;
+}
+
+@media (min-width: 900px) {
+    .topBar {
+        display: none
+    }
+}
+
+@media (max-width: 396px) {
+    .topBar > img:nth-child(2){
+        display: none;
+    }
+}

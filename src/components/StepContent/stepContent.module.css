@@ -5,5 +5,12 @@
     position: relative;
 }
 
+@media (max-width: 900px) {
+    .stepContentContainer {
+        position: static;
+        height: auto;
+    }
+  }
+
 
 

@@ -1,17 +1,19 @@
-import { FormEvent, useContext } from 'react'
+import { FormEvent, useContext, useEffect, useRef, useState } from 'react'
 import { StepContext } from '../../context/StepContext'
-import { useInput } from '../../hooks'
+import { useInput, useMediaQuery } from '../../hooks'
 import { UseInput } from '../../types'
 import { validateEmail, validateName, validatePhone } from '../../utils'
 import styles from './step1.module.css'
 import Input from '../ui/Input'
 import { getFormAttrs } from '../../helpers'
+import Footer from '../ui/Footer'
 
 const { step1Content } = styles
 
 function Step1() {
   const { state, updateStep, setPersonalInfo } = useContext(StepContext)
   const { personalInfo } = state
+  const { isMobile } = useMediaQuery()
 
   const nameInput = useInput(personalInfo.name, validateName)
   const emailInput = useInput(personalInfo.email, validateEmail)
@@ -57,9 +59,17 @@ function Step1() {
         {formInputs.map((formInputProps) => (
           <Input key={formInputProps.name} {...formInputProps} />
         ))}
-        <button className='btn btn-primary next-button' type='submit'>
-          Next Step
-        </button>
+        {isMobile ? (
+          <Footer>
+            <button className='btn btn-primary' type='submit'>
+              Next Step
+            </button>
+          </Footer>
+        ) : (
+          <button className='btn btn-primary next-button desktop' type='submit'>
+            Next Step
+          </button>
+        )}
       </form>
     </div>
   )
