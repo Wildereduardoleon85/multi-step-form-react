@@ -28,10 +28,14 @@ export type PlanBadge = {
   }
 }
 
-export type AddOns = {
+export type SummarizedAddOns = {
   name: string
-  description: string
   monthlyCost: string
+  yearlyCost: string
+}
+
+export interface AddOns extends SummarizedAddOns {
+  description: string
 }
 
 export type Subscription = 'monthly' | 'yearly'

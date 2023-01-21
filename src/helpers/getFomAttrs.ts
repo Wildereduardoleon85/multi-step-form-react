@@ -32,7 +32,7 @@ function getFormAttrsByName(inputs: UseInput[]): FormAttrsByName {
 }
 
 export function getFormAttrs(inputs: UseInput[]): FormInputDynamicAttrs[] {
-  const formInputs = form.map((formInput: FormInputDefaultAttrs) => {
+  return form.map((formInput: FormInputDefaultAttrs) => {
     const formAttrsByName: FormAttrsByName = getFormAttrsByName(inputs)
     return {
       ...formInput,
@@ -42,6 +42,4 @@ export function getFormAttrs(inputs: UseInput[]): FormInputDynamicAttrs[] {
       value: formAttrsByName[formInput.name].value,
     }
   })
-
-  return formInputs
 }

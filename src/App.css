@@ -50,10 +50,21 @@ body {
     font-weight: 400;
 }
 
-.btn-primary:hover {
+.btn-purple {
+    background-color: var(--purple);
+    color:white;
+    font-weight: 400;
+}
+
+.btn-primary:hover, 
+.btn-purple:hover  {
     opacity: 0.85;
     color: white;
     transition: opacity ease-in-out 0.15s;
+}
+
+.btn:active {
+    opacity: 0.2;
 }
 
 .next-button {

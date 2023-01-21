@@ -1,0 +1,66 @@
+.cardContainer {
+    margin-top: 40px;
+    
+}
+
+.summaryCard {
+    border-radius: 8px;
+    background-color: var(--cake-blue);
+    padding: 20px;
+}
+
+.summaryCard > div {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.summaryCard > div:last-child{
+    padding-bottom: 0;
+}
+
+.summaryCard > div:first-child{
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 20px;
+}
+
+.summaryCard > div:first-child > div:nth-child(2),
+.addOnPrize {
+    margin-left: auto;
+}
+
+.planLabel {
+    font-weight: 700;
+}
+
+.label {
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+.changeLabel {
+    margin-top: 8px;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color ease-in-out 0.3s;
+}
+
+.changeLabel:hover {
+    color: var(--purple);
+}
+
+.planPrize {
+    font-weight: 700;
+}
+
+.total {
+    display: flex;
+    padding: 20px;
+}
+
+.total > p:nth-child(2){
+    margin-left: auto;
+    font-size: 1.25rem;
+    color: var(--purple);
+    font-weight: 700;
+}

@@ -33,24 +33,19 @@ const PlanCard = ({
   selectedPlan,
   onSelectedPlan,
 }: PlanCardProps) => {
-  function setPlanBadgeClassName(planName: SelectedPlan): string {
-    if (planName.toLowerCase() === selectedPlan) {
-      return `${planBadge} ${active}`
-    }
-
-    return planBadge
-  }
+  const isSelected = planName.toLowerCase() === selectedPlan
+  const isMonthly = subscription === 'monthly'
 
   return (
     <div
-      className={setPlanBadgeClassName(planName as SelectedPlan)}
+      className={isSelected ? `${planBadge} ${active}` : planBadge}
       onClick={onSelectedPlan}
       id={planName.toLowerCase()}
     >
       <img src={planIcons[planName]} alt={altText} />
       <div className={planInfo}>
         <p>{planName}</p>
-        <p>{subscription === 'monthly' ? prize.monthly : prize.yearly}</p>
+        <p>{isMonthly ? `$${prize.monthly}/mo` : `$${prize.yearly}/yr`}</p>
         {subscription === 'yearly' && <p>2 months free</p>}
       </div>
     </div>

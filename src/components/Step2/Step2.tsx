@@ -41,11 +41,6 @@ function Step2() {
     }
   }
 
-  const updatedPlan = {
-    selectedPlan,
-    subscription,
-  }
-
   function onNextStepClick() {
     updateStep(3)
   }
@@ -64,7 +59,10 @@ function Step2() {
         </div>
         <div className={switchContainer}>
           <p className={subscription === 'monthly' ? active : ''}>Monthly</p>
-          <SwitchButton onChange={onSwitchChange} />
+          <SwitchButton
+            onChange={onSwitchChange}
+            defaultChecked={subscription === 'yearly'}
+          />
           <p className={subscription === 'yearly' ? active : ''}>Yearly</p>
         </div>
       </div>

@@ -14,16 +14,16 @@ const Checkbox = forwardRef(
     { defaultChecked = false, disablePointerEvents = false }: CheckboxProps,
     ref: LegacyRef<HTMLInputElement>
   ) => {
-    const [uuid, setUuid] = useState<string>('')
+    const [id, setId] = useState<string>('')
 
     useEffect(() => {
-      setUuid(generateUUID())
+      setId(generateUUID())
     }, [])
 
     return (
       <>
         <label
-          htmlFor={uuid}
+          htmlFor={id}
           className={`${checkboxLabel} ${
             disablePointerEvents ? disablePointer : ''
           }`}
@@ -32,7 +32,7 @@ const Checkbox = forwardRef(
             defaultChecked={defaultChecked}
             ref={ref}
             type='checkbox'
-            id={uuid}
+            id={id}
             className={checkboxInput}
           />
           <div className={checkboxBox}></div>

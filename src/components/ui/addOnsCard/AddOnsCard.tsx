@@ -1,4 +1,5 @@
-import { forwardRef, Ref } from 'react'
+import { forwardRef, Ref, useContext } from 'react'
+import { StepContext } from '../../../context/StepContext'
 import { AddOnsCardProps } from '../../../types'
 import Checkbox from '../Checkbox'
 import styles from './addOnsCard.module.css'
@@ -13,10 +14,19 @@ const AddOnsCard = forwardRef(
       onCardClick,
       description,
       monthlyCost,
+      yearlyCost,
       defaultChecked,
     }: AddOnsCardProps,
     ref: Ref<HTMLInputElement>
   ) => {
+    const {
+      state: {
+        planType: { subscription },
+      },
+    } = useContext(StepContext)
+
+    const isMonthly = subscription === 'monthly'
+
     return (
       <div
         className={isActive ? `${addOns} ${active}` : addOns}
@@ -31,7 +41,7 @@ const AddOnsCard = forwardRef(
           <p>{name}</p>
           <p>{description}</p>
         </div>
-        <p>{`+$${monthlyCost}`}/mo</p>
+        <p>{isMonthly ? `+$${monthlyCost}/$mo` : `+$${yearlyCost}/$yr`}</p>
       </div>
     )
   }

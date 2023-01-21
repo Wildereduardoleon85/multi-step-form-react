@@ -4,11 +4,12 @@ import styles from './switchButton.module.css'
 
 type SwitchButtonProps = {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
+  defaultChecked?: boolean
 }
 
 const { switchButton, inputSwitch, labelSwitch } = styles
 
-function SwitchButton({ onChange }: SwitchButtonProps) {
+function SwitchButton({ onChange, defaultChecked = false }: SwitchButtonProps) {
   const [id, setId] = useState('')
 
   useEffect(() => {
@@ -18,6 +19,7 @@ function SwitchButton({ onChange }: SwitchButtonProps) {
   return (
     <div className={switchButton}>
       <input
+        defaultChecked={defaultChecked}
         type='checkbox'
         id={id}
         className={inputSwitch}
