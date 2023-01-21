@@ -90,3 +90,29 @@ body {
     color: var(--secondary);
     margin-top: 10px;
 }
+
+.step-circle {
+    display: flex;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid white;
+    position: relative;
+}
+
+.active-circle {
+    background-color: var(--aquamarine);
+    color: var(--primary);
+    font-weight: 500;
+    border-color: transparent;
+}
+
+.step-circle  > p {
+    margin: auto;
+    color: white;
+}
+
+.step-circle  > p.active-label {
+    color: var(--primary);
+}

@@ -8,7 +8,7 @@ const {
   stepInfoContainer,
   stepCircle,
   stepDescription,
-  active,
+  activeCircle,
   activeLabel,
 } = styles
 
@@ -19,9 +19,9 @@ function SideBar() {
 
   function setActiveClassName(index: number, isCircle: boolean) {
     if (step === index + 1 || (index + 1 === 4 && step === 5)) {
-      return isCircle ? `${stepCircle} ${active}` : activeLabel
+      return isCircle ? 'step-circle active-circle' : 'active-label'
     }
-    return isCircle ? stepCircle : ''
+    return isCircle ? 'step-circle' : ''
   }
 
   return (

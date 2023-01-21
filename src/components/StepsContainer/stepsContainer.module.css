@@ -14,4 +14,11 @@ main {
     border-radius: 12px;
     display: flex;
     flex-direction: row;
+    max-width: 90vw;
 }
+
+@media (max-width: 900px) {
+    .stepsContainer {
+        padding: 32px;
+    }
+  }

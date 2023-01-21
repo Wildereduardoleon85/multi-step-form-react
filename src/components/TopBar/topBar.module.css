@@ -1,0 +1,25 @@
+.topBar {
+    /* background-image: url('../../assets/bg-sidebar-mobile.svg'); */
+    height: 172px; 
+    background-color: grey;
+    display: flex;
+}
+
+.topBar > div:first-child {
+    width: 60px;
+    height: 60px;
+    background-color: red;
+}
+
+.topBar > div:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    background-color: blue;
+    margin-left: auto;
+}
+
+@media (min-width: 900px) {
+    .topBar {
+        display: none
+    }
+}

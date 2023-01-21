@@ -13,21 +13,6 @@
     max-width: fit-content;
 }
 
-.stepCircle {
-    display: flex;
-    align-items: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid white;
-    position: relative;
-}
-
-.stepCircle  > p {
-    margin: auto;
-    color: white;
-}
-
 .stepDescription {
     margin-left: 16px;
 }
@@ -42,13 +27,8 @@
     color: white;
 }
 
-.active {
-    background-color: var(--aquamarine);
-    color: var(--primary);
-    font-weight: 500;
-    border-color: transparent;
-}
-
-.stepCircle  > p.activeLabel {
-    color: var(--primary);
-}
+@media (max-width: 900px) {
+    .sideBar {
+        display: none;
+    }
+  }
