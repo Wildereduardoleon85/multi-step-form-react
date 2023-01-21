@@ -1,0 +1,24 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container img {
+    display: block;
+    margin: auto;
+}
+
+.container h2 {
+    margin-top: 32px;
+}
+
+.container h2,
+.container p {
+    text-align: center;
+}
+
+.container p {
+    line-height: 24px;
+}

@@ -14,6 +14,7 @@ type StepAction =
   | { type: 'setIsOnlineService' }
   | { type: 'setIsLargerStorage' }
   | { type: 'setIsCustomizableProfile' }
+  | { type: 'setConfirmed' }
 
 export function stepReducer(state: StepState, action: StepAction): StepState {
   switch (action.type) {

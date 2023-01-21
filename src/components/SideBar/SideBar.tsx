@@ -17,18 +17,19 @@ function SideBar() {
     state: { step },
   } = useContext(StepContext)
 
+  function setActiveClassName(index: number, isCircle: boolean) {
+    if (step === index + 1 || (index + 1 === 4 && step === 5)) {
+      return isCircle ? `${stepCircle} ${active}` : activeLabel
+    }
+    return isCircle ? stepCircle : ''
+  }
+
   return (
     <div className={sideBar}>
       {sideBarStepsInfo.map((stepInfo, index) => (
         <div className={stepInfoContainer} key={stepInfo.id}>
-          <div
-            className={
-              step === index + 1 ? `${stepCircle} ${active}` : stepCircle
-            }
-          >
-            <p className={`${step === index + 1 ? activeLabel : ''}`}>
-              {stepInfo.id}
-            </p>
+          <div className={setActiveClassName(index, true)}>
+            <p className={setActiveClassName(index, false)}>{stepInfo.id}</p>
           </div>
           <div className={stepDescription}>
             <p>{`STEP ${stepInfo.id}`}</p>

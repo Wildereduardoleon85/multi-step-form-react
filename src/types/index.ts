@@ -42,7 +42,7 @@ export type Subscription = 'monthly' | 'yearly'
 
 export type SelectedPlan = 'arcade' | 'advanced' | 'pro'
 
-export type Steps = 1 | 2 | 3 | 4
+export type Steps = 1 | 2 | 3 | 4 | 5
 
 export type AddOnsCardAttrs = {
   [char: string]: {
