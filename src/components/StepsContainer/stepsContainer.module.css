@@ -3,18 +3,19 @@ main {
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    min-height: 760px;
     align-items: center;
 }
 
 .stepsContainer {
     background-color: white; 
     width: 900px;
-    height: 600px;
     padding: 16px 0 16px 16px;
     border-radius: 12px;
     display: flex;
     flex-direction: row;
     max-width: 90vw;
+    height: 600px;
 }
 
 @media (max-width: 900px) {
@@ -26,5 +27,11 @@ main {
     }
     main {
         align-items: flex-start;
+    }
+  }
+
+  @media (max-height: 675px)  {
+    .stepsContainer {
+        height: auto;
     }
   }

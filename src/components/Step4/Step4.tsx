@@ -1,7 +1,8 @@
 import { useContext } from 'react'
 import { StepContext } from '../../context/StepContext'
-import { useFishingUp } from '../../hooks'
+import { useFishingUp, useMediaQuery } from '../../hooks'
 import { capitalize } from '../../utils'
+import Footer from '../ui/Footer'
 import styles from './step4.module.css'
 
 const {
@@ -23,6 +24,7 @@ function Step4() {
     updateStep,
   } = useContext(StepContext)
   const { selectedPlanPrize, summarizedAddOns, totalPrize } = useFishingUp()
+  const { isMobile } = useMediaQuery()
 
   const isMonthly = subscription === 'monthly'
   const subscriptionPrizeLabel = isMonthly ? 'mo' : 'yr'
@@ -70,20 +72,43 @@ function Step4() {
           <p>{`+$${totalPrize}/${subscriptionPrizeLabel}`}</p>
         </div>
       </div>
-      <button
-        type='button'
-        className='btn go-back-button'
-        onClick={() => updateStep(3)}
-      >
-        Go Back
-      </button>
-      <button
-        className='btn btn-purple next-button'
-        type='button'
-        onClick={() => updateStep(5)}
-      >
-        Confirm
-      </button>
+      {isMobile ? (
+        <>
+          <Footer>
+            <button
+              type='button'
+              className='btn go-back-button mobile'
+              onClick={() => updateStep(3)}
+            >
+              Go Back
+            </button>
+            <button
+              className='btn btn-purple next-button mobile'
+              type='button'
+              onClick={() => updateStep(5)}
+            >
+              Confirm
+            </button>
+          </Footer>
+        </>
+      ) : (
+        <>
+          <button
+            type='button'
+            className='btn go-back-button'
+            onClick={() => updateStep(3)}
+          >
+            Go Back
+          </button>
+          <button
+            className='btn btn-primary next-button'
+            type='button'
+            onClick={() => updateStep(5)}
+          >
+            Next Step
+          </button>
+        </>
+      )}
     </>
   )
 }

@@ -1,13 +1,10 @@
 import styles from './sideBar.module.css'
-import { sideBarStepsInfo } from '../../constants'
+import { sideBarStepsInfo } from '../../../constants'
 import { useContext } from 'react'
-import { StepContext } from '../../context/StepContext'
+import { StepContext } from '../../../context/StepContext'
+import sideBarIcon from '../../../assets/sidebar-icon.svg'
 
-const {
-  sideBar,
-  stepInfoContainer,
-  stepDescription,
-} = styles
+const { sideBar, stepInfoContainer, stepDescription } = styles
 
 function SideBar() {
   const {
@@ -34,6 +31,7 @@ function SideBar() {
           </div>
         </div>
       ))}
+      <img src={sideBarIcon} alt='sidebar-icon' />
     </div>
   )
 }

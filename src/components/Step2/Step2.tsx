@@ -5,6 +5,8 @@ import PlanCard from '../ui/PlanCard'
 import { PlanBadge as PlanBadgeType, SelectedPlan } from '../../types'
 import SwitchButton from '../ui/SwitchButton'
 import { StepContext } from '../../context/StepContext'
+import { useMediaQuery } from '../../hooks'
+import Footer from '../ui/Footer'
 
 const { switchContainer, prizes, active } = styles
 
@@ -17,6 +19,7 @@ function Step2() {
     setSelectedPlan,
     updateStep,
   } = useContext(StepContext)
+  const { isMobile } = useMediaQuery()
 
   function onSwitchChange(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.checked) {
@@ -66,20 +69,43 @@ function Step2() {
           <p className={subscription === 'yearly' ? active : ''}>Yearly</p>
         </div>
       </div>
-      <button
-        type='button'
-        className='btn go-back-button'
-        onClick={() => updateStep(1)}
-      >
-        Go Back
-      </button>
-      <button
-        className='btn btn-primary next-button'
-        type='button'
-        onClick={onNextStepClick}
-      >
-        Next Step
-      </button>
+      {isMobile ? (
+        <>
+          <Footer>
+            <button
+              type='button'
+              className='btn go-back-button mobile'
+              onClick={() => updateStep(1)}
+            >
+              Go Back
+            </button>
+            <button
+              className='btn btn-primary next-button mobile'
+              type='button'
+              onClick={onNextStepClick}
+            >
+              Next Step
+            </button>
+          </Footer>
+        </>
+      ) : (
+        <>
+          <button
+            type='button'
+            className='btn go-back-button'
+            onClick={() => updateStep(1)}
+          >
+            Go Back
+          </button>
+          <button
+            className='btn btn-primary next-button'
+            type='button'
+            onClick={onNextStepClick}
+          >
+            Next Step
+          </button>
+        </>
+      )}
     </>
   )
 }

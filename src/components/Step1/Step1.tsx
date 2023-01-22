@@ -61,12 +61,15 @@ function Step1() {
         ))}
         {isMobile ? (
           <Footer>
-            <button className='btn btn-primary' type='submit'>
+            <button
+              className='btn btn-primary next-button mobile'
+              type='submit'
+            >
               Next Step
             </button>
           </Footer>
         ) : (
-          <button className='btn btn-primary next-button desktop' type='submit'>
+          <button className='btn btn-primary next-button' type='submit'>
             Next Step
           </button>
         )}

@@ -1,8 +1,16 @@
 .sideBar {
     width: var(--sideBarWidthDesk);
-    height: var(--sideBarHeightDesk);
-    max-height: 550px;
-    background-image: url("../../assets/bg-sidebar-desktop.svg");
+    height: 100%;
+    background-color: var(--purple);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+}
+
+.sideBar > img {
+    position: absolute;
+    bottom: 0;
 }
 
 .stepInfoContainer{

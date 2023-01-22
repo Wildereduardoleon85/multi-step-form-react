@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="274" height="237" viewBox="0 0 274 237">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_1" data-name="Rectángulo 1" width="274" height="237" rx="10" transform="translate(396.695 447)" fill="#483eff"/>
+    </clipPath>
+  </defs>
+  <g id="sidebar-bottom-icon" transform="translate(-396.695 -447)" clip-path="url(#clip-path)">
+    <g id="Grupo_1" data-name="Grupo 1" transform="translate(396.695 116)">
+      <path id="Trazado_1" data-name="Trazado 1" d="M-34.692,543.1C3.247,632.538,168.767,685.017,211.96,612.52s-66.1-85.653-104.735-160.569S38.568,330.277-17.257,347.344-72.632,453.664-34.693,543.1Z" fill="#6259ff" fill-rule="evenodd"/>
+      <path id="Trazado_2" data-name="Trazado 2" d="M233.1,601.153c60.679-28.278,92.839-143.526,41.875-171.528s-57.4,47.579-108.059,75.987-82.14,50.207-69.044,88.241S172.416,629.431,233.1,601.153Z" fill="#f9818e" fill-rule="evenodd"/>
+      <path id="Trazado_3" data-name="Trazado 3" d="M165.3,469.1l10.607-10.806m33.549,16.29-12.506-10.5m-9.4,24.913-6.908,14.8" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="5"/>
+      <path id="Trazado_4" data-name="Trazado 4" d="M.305,546.891a67,67,0,1,0-67-67,67,67,0,0,0,67,67Z" fill="#ffaf7e"/>
+    </g>
+  </g>
+</svg>

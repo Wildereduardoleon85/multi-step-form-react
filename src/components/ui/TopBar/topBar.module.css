@@ -30,12 +30,6 @@
     margin: 0 8px;
 }
 
-@media (min-width: 900px) {
-    .topBar {
-        display: none
-    }
-}
-
 @media (max-width: 396px) {
     .topBar > img:nth-child(2){
         display: none;

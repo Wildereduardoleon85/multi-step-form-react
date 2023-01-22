@@ -1,14 +1,13 @@
 .stepContentContainer {
     width: 450px;
-    margin: auto;
-    height: 540px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
 }
 
 @media (max-width: 900px) {
     .stepContentContainer {
         position: static;
-        height: auto;
     }
   }
 

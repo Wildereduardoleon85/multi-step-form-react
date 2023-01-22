@@ -43,3 +43,17 @@
    margin-top: 8px;
    font-size: 0.9rem;
 }
+
+@media (max-width: 560px) {
+    .planBadge{
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .planInfo {
+        position: static;
+        margin-left: 10px;
+    }
+  }
