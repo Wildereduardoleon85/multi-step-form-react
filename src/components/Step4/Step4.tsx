@@ -101,11 +101,11 @@ function Step4() {
             Go Back
           </button>
           <button
-            className='btn btn-primary next-button'
+            className='btn btn-purple next-button'
             type='button'
             onClick={() => updateStep(5)}
           >
-            Next Step
+            Confirm
           </button>
         </>
       )}
