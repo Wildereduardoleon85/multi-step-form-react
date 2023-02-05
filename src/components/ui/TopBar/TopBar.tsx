@@ -20,8 +20,8 @@ function TopBar() {
 
   return (
     <div className={topBar}>
-      <img src={leftMountainIcon} alt="left-mountain-icon" />
-      <img src={rightMountainIcon} alt="right-mountain-icon" />
+      <img src={leftMountainIcon} alt="left-mountain-icon" width={221} height={172}/>
+      <img src={rightMountainIcon} alt="right-mountain-icon" width={165} height={172}/>
       <div className={circleContainer}>
         <div>
           {sideBarStepsInfo.map((stepInfo, index) => (

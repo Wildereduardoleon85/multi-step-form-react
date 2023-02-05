@@ -7,7 +7,7 @@ function Step5() {
   return (
     <div className={container}>
       <div>
-        <img src={iconThankyou} alt='icon-thank-you' />
+        <img src={iconThankyou} alt='icon-thank-you' width={80} height={80}/>
         <h2 className='stepTitle'>Thank you!</h2>
         <p className='stepSubtitle'>
           Thanks for confirming your subscription! We hope you have fun using

@@ -31,7 +31,7 @@ function SideBar() {
           </div>
         </div>
       ))}
-      <img src={sideBarIcon} alt='sidebar-icon' />
+      <img src={sideBarIcon} alt='sidebar-icon' width={274} height={237}/>
     </div>
   )
 }

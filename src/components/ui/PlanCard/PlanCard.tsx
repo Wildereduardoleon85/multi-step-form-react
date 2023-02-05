@@ -42,7 +42,7 @@ const PlanCard = ({
       onClick={onSelectedPlan}
       id={planName.toLowerCase()}
     >
-      <img src={planIcons[planName]} alt={altText} />
+      <img src={planIcons[planName]} alt={altText} width={40} height={40}/>
       <div className={planInfo}>
         <p>{planName}</p>
         <p>{isMonthly ? `$${prize.monthly}/mo` : `$${prize.yearly}/yr`}</p>
