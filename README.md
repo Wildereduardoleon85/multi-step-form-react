@@ -1,4 +1,4 @@
-# multi-step-form-react
+# Multi-step-form-react
 
 This is a project based on the challenge "Multi-step form" from the frontend mentor web site (https://www.frontendmentor.io/), you can see my live site solution here: https://multi-step-form-by-wilder-leon.netlify.app/
 
